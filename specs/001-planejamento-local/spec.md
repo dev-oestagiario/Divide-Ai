@@ -14,7 +14,7 @@ Planilhas estáticas exigem alterar código ou fórmulas ao variar salários, re
 - **Participantes financeiros:** pessoas cujas rendas e despesas são registradas; não precisam entrar no aplicativo.
 - **Moeda:** BRL; valores monetários representados em centavos.
 - **Períodos:** meses civis; idioma português do Brasil; fuso do dispositivo apenas para apresentação.
-- **Sem internet:** após disponibilizados os arquivos da aplicação, dados, cálculos e edição devem funcionar sem conexão. Distribuição inicial offline/PWA é decisão técnica do plano, não requisito de instalação obrigatória.
+- **Offline:** após a primeira visita online, os recursos essenciais devem permitir reabrir o aplicativo e editar dados sem conexão, por cache controlado (PWA/service worker ou equivalente), sem instalação obrigatória. Primeiro acesso e atualizações podem exigir internet.
 - **Privacidade:** dados permanecem no armazenamento local do navegador; exportar/importar JSON manualmente, com aviso de riscos.
 
 ## 3. Histórias de usuário priorizadas
@@ -62,9 +62,9 @@ Como operador, quero indicar quando a despesa foi paga e por quem, para diferenc
 | RF07 | Permitir rateio igualitário ou manual validado | P1 |
 | RF08 | Separar fontes de pagamento e tipos de benefício, com validação de elegibilidade/saldo | P1 |
 | RF09 | Mostrar tabela com total, quotas de cada participante, subtotais e saldo individual | P1 |
-| RF10 | Mostrar envelopes 60/15/25 personalizáveis e suas diferenças entre limite e previsto/realizado | P1 |
+| RF10 | Mostrar limites 60/15/25 editáveis versus **compromissos planejados**; pagamentos efetivamente realizados entram apenas em RF14/P2 | P1 |
 | RF11 | Manter metas individuais ou compartilhadas (casa, reserva, carro etc.) | P1 |
-| RF12 | Guardar dados localmente e oferecer exportação/importação com versão de formato | P1 |
+| RF12 | Persistir dados localmente e permitir backup versionado, validado integralmente, com prévia, confirmação e importação atômica sem perda do estado anterior em erro | P1 |
 | RF13 | Fechar e consultar meses sem alteração retroativa silenciosa | P1 |
 | RF14 | Registrar pagamento, pagador e eventual ajuste de saldos (acerto) | P2 |
 | RF15 | Fornecer impressão/exportação simples do resumo mensal, sem expor dados desnecessários | P2 |
@@ -79,10 +79,10 @@ Como operador, quero indicar quando a despesa foi paga e por quem, para diferenc
 | RN04 | Quando a soma das rendas em dinheiro é zero, bloquear *somente* o cálculo proporcional e oferecer alternativas explícitas; não dividir por zero nem presumir igualdade. |
 | RN05 | Participante com renda em dinheiro zero pode permanecer no grupo; sua quota proporcional é zero se houver outros com renda positiva. |
 | RN06 | Benefícios são vinculados aos respectivos titulares, com modalidade (alimentação, refeição ou flexível) e uso apenas em despesas elegíveis. Nunca transferir saldo de vale entre pessoas por inferência. |
-| RN07 | Primeiro determinar a quota de cada participante na despesa, depois abater, para cada um, apenas benefício próprio elegível e disponível. Falta de benefício deixa quota em dinheiro ou pendente, conforme opção explícita do operador; não redistribuir automaticamente obrigação. |
+| RN07 | Primeiro determinar a quota por pessoa, depois abater somente benefício próprio elegível. O consumo do vale é determinístico por mês, data prevista e ID da despesa, com prioridade ajustável pelo operador. Falta de saldo aparece como quota em dinheiro ou pendente, mediante escolha explícita, sem redistribuir obrigação. |
 | RN08 | O orçamento 60/15/25 é **referência** de destinação do dinheiro; não é ordem para gastar 100% da renda. Percentuais editáveis e validados conforme modo escolhido. |
 | RN09 | Objetivos financeiros são apropriações planejadas; não devem ser lançados como pagamentos efetivos até haver registro de transferência/compra correspondente. |
-| RN10 | Saldo livre em dinheiro = renda em dinheiro − compromissos planejados em dinheiro − alocações a metas. Saldo em vale é calculado separadamente. Não duplicar deduções. |
+| RN10 | **Disponível planejado** = renda em dinheiro − compromissos previstos em dinheiro − metas previstas (sem dupla dedução). **Saldo efetivo** só existe com registro de pagamentos/aportes realizados (RF14/P2). Saldo em vale é separado. |
 | RN11 | Alterar uma renda recalcula o mês aberto e não altera meses fechados, que preservam uma cópia dos parâmetros e quotas. |
 | RN12 | Nenhum valor negativo é aceito em despesas ou rendas; estornos/correções usam operações identificadas, a definir quando introduzir realizado. |
 | RN13 | Em rateio manual, quotas não negativas devem somar exatamente 100% em termos de valor monetário alocado (centavos), sob pena de erro de validação. |
