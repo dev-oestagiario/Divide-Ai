@@ -11,7 +11,15 @@
 [ ] Constituição e decisões propostas ratificadas pelo responsável.
 [ ] Estratégia de recuperação e modalidades de vale aprovadas.
 [ ] CLI Spec Kit, skills e ambiente de testes verificados em repositório.
-[ ] Análise cruzada da especificação executada com ferramenta instalada.
+[x] Revisão cruzada manual registrada em `analyze.md` (não equivale ao comando do Spec Kit).
+[ ] Análise oficial `/speckit.analyze` no ambiente instalado, ou decisão formal sobre validação manual.
 [ ] Testes reais executados quando houver código.
 
 Itens [x] comprovam documentação, não implementação ou QA da aplicação.
+
+## Verificação em 2026-11-23
+- Revisão técnica manual: concluída com correções em spec/plan/tasks, sem declarar ratificação.
+- Fonte oficial da LGPD/LBI: consultada; matriz preliminar atualizada.
+- GitHub: main/develop ainda desprotegidas; PR #1 em rascunho.
+- Dispositivos conectados offline: não foram executados CLI, testes nem CI.
+- Aprovação do responsável: ainda pendente.
