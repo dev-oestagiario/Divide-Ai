@@ -8,7 +8,7 @@
 
 1. **Operação local:** somente um operador administra grupos de duas ou mais pessoas, sem login, backend ou sincronização no MVP; proteção depende do dispositivo e perfil de navegador.
 2. **Rendas:** registrar várias fontes por pessoa, em BRL e centavos; dinheiro e vales separados; proporção calculada sobre **renda líquida monetária** ativa no período.
-3. **Despesas:** gastos pessoais inteiramente atribuídos a uma pessoa; compartilhados divididos proporcionalmente por padrão, podendo usar igualdade ou quotas manuais validadas.
+3. **Despesas:** gastos pessoais inteiramente atribuídos a uma pessoa; compartilhados divididos proporcionalmente por padrão, podendo usar igualdade ou quotas manuais validadas. **Conforme ADR 0002 proposta**, cada despesa compartilhada poderá selecionar somente os participantes responsáveis, e pessoas não selecionadas terão quota zero; o rateio proporcional usará apenas a renda dos selecionados.
 4. **Benefícios:** vale-alimentação, vale-refeição ou flexível vinculados ao titular, sem transferência presumida; só elegíveis por modalidade/estabelecimento. Após rateio, aplicar saldo por ordem determinística (mês, data prevista, ID), com prioridade ajustável; insuficiência deve gerar alerta e escolha explícita entre dinheiro e pendência.
 5. **Orçamento:** 60% necessidades / 15% lazer / 25% metas, todos editáveis e considerados referências, não obrigação de gastar 100% da renda; valor não comprometido fica livre.
 6. **Metas e pagamentos:** reserva, casa, carro e outros objetivos são *compromissos planejados*; não inventar depósitos ou gastos realizados. Registro de pagamentos e saldos efetivos permanece P2.
@@ -20,7 +20,7 @@
 
 - [ ] Constituição e 14 regras RN aprovadas expressamente.
 - [ ] 15 RF e 8 RNF do MVP/P2 compreendidos e sem conflito.
-- [ ] ADR 0001 (local-first), ADR 0002 (rateio entre participantes selecionados) e stack proposta aprovados.
+- [ ] ADR 0001 (local-first), ADR 0002 (rateio entre participantes selecionados), inclusive cenários CT17–CT27 propostos, e stack aprovados.
 - [ ] Política de vales insuficientes, fechamento/reabertura e backup aprovada.
 - [ ] Matriz legal preliminar aceita como triagem, sem alegar parecer jurídico.
 - [ ] Rulesets ativos e verificados em `main` e `develop`.
