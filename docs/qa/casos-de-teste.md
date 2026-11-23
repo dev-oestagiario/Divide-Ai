@@ -21,4 +21,24 @@ Todos os valores abaixo são **inteiramente fictícios** e independentes de fina
 | CT15 | Valor negativo ou rateio manual que não fecha | Rejeitar entrada e preservar valores anteriores |
 | CT16 | Navegação por teclado e viewport de 320 px | Controles operáveis e valores legíveis |
 
+## Cenários propostos — ADR 0002 (dependem de ratificação)
+
+Estes casos **não substituem as regras atualmente documentadas no spec.md**. A ADR 0002 ainda é uma proposta; só incorporar ao conjunto obrigatório do MVP após sua ratificação. Todas as pessoas e rendas abaixo são fictícias.
+
+| ID | Cenário proposto | Resultado esperado se ADR 0002 aprovada |
+|---|---|---|
+| CT17 | Rendas A=R$ 2.700, B=R$ 3.300, C=R$ 4.000; despesa de R$ 1.800 compartilhada **apenas por A e B** | Quotas A=R$ 810, B=R$ 990, C=R$ 0; C não contribui |
+| CT18 | Mesma despesa, agora com **A, B e C** selecionados | Quotas A=R$ 486, B=R$ 594, C=R$ 720 |
+| CT19 | R$ 0,01 dividido igualmente por três participantes selecionados | Soma exata R$ 0,01; primeiro ID estável recebe 1 centavo |
+| CT20 | Rateio proporcional de R$ 1,01 com pesos A=200, B=300, C=500 | Quotas A=R$ 0,20, B=R$ 0,30, C=R$ 0,51, pelo método maior resto |
+| CT21 | Despesa R$ 75,00 com duas pessoas selecionadas e ambas com renda zero | Bloquear somente rateio proporcional; oferecer igual/manual |
+| CT22 | Selecionar **nenhuma** pessoa numa despesa compartilhada | Impedir salvamento; mensagem acessível; manter dados anteriores |
+| CT23 | Terceira pessoa C não selecionada; alterar renda de C num mês aberto | Não alterar quotas da despesa rateada apenas entre A e B |
+| CT24 | Alterar lista de pessoas de uma despesa em mês fechado | Preservar snapshot; solicitar reabertura explícita conforme política ratificada |
+| CT25 | Selecionar A e B; informar quotas manuais que não somam o valor da despesa | Bloquear confirmação e indicar a diferença em centavos |
+| CT26 | Reordenar linhas da tabela sem alterar dados | Quotas e uso previsto de vales permanecem iguais |
+| CT27 | A selecionado com vale elegível insuficiente, C não selecionado com vale sobrando | Não usar vale de C nem redistribuir obrigação; alertar falta de vale de A |
+
+**Conferência independente de exemplos:** CT17–CT21 tiveram os resultados aritméticos conferidos por algoritmo temporário de inteiros em centavos, fora da aplicação. CT22–CT27 são expectativas especificadas, não executadas.
+
 **Execução real:** pendente de implementação, testes e evidências.
