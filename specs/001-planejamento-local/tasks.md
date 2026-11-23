@@ -53,8 +53,8 @@ Os blocos seguem dependências e são tarefas futuras; nenhum `[ ]` representa e
 | RF11 | T031 | Metas de casa, reserva e carro |
 | RF12 | T012, T013 | Persistência, backup e restauração atômica |
 | RF13 | T032 | Mês fechado preservado |
-| RF14 (P2) | T033 | Pagamentos efetivos diferenciados do previsto |
-| RF15 (P2) | T034 | Impressão/exportação sem dados ocultos |
+| RF14 | T033 (P2) | Pagamentos efetivos diferenciados do previsto |
+| RF15 | T034 (P2) | Impressão/exportação sem dados ocultos |
 | RNF01 | T010, T042 | Ausência de envio financeiro remoto padrão |
 | RNF02 | T010, T012, T013 | Cache offline, persistência e backup |
 | RNF03 | T010, T040 | Viewports 320–1280 px |
