@@ -2,7 +2,7 @@
 
 **Produto:** Dividi (nome de trabalho) | **Repositório:** `dev-oestagiario/Divide-Ai`  
 **Estado:** aguardando aceite explícito do responsável. Este documento **não** representa aprovação.  
-**Referências:** `AGENTS.md`, `.specify/memory/constitution.md`, `spec.md`, `clarifications.md`, `plan.md`, `tasks.md`, `analyze.md`, ADR 0001 e Issue #2.
+**Referências:** `AGENTS.md`, `.specify/memory/constitution.md`, `spec.md`, `clarifications.md`, `plan.md`, `tasks.md`, `analyze.md`, ADRs 0001/0002 e Issue #2.
 
 ## Escopo para aprovação
 
@@ -20,7 +20,7 @@
 
 - [ ] Constituição e 14 regras RN aprovadas expressamente.
 - [ ] 15 RF e 8 RNF do MVP/P2 compreendidos e sem conflito.
-- [ ] ADR 0001 (local-first) e stack proposta aprovados.
+- [ ] ADR 0001 (local-first), ADR 0002 (rateio entre participantes selecionados) e stack proposta aprovados.
 - [ ] Política de vales insuficientes, fechamento/reabertura e backup aprovada.
 - [ ] Matriz legal preliminar aceita como triagem, sem alegar parecer jurídico.
 - [ ] Rulesets ativos e verificados em `main` e `develop`.
@@ -29,6 +29,6 @@
 
 ## Formato para registro de decisão
 
-O responsável poderá registrar: **"Ratifico a Constituição, as regras RN01–RN14, o MVP local-first, o ADR 0001 e as decisões 1–9 do termo de ratificação da F0"**, ou registrar ressalvas específicas. Essa declaração autoriza a **ratificação de produto**, não autoriza automaticamente implementação da F1, merge na main, homologação ou publicação.
+O responsável poderá registrar: **"Ratifico a Constituição, as regras RN01–RN14, o MVP local-first, os ADRs 0001 e 0002 e as decisões 1–9 do termo de ratificação da F0"**, ou registrar ressalvas específicas. Essa declaração autoriza a **ratificação de produto**, não autoriza automaticamente implementação da F1, merge na main, homologação ou publicação.
 
 **Status atual:** nenhuma ratificação expressa recebida. Bloqueadores externos (rulesets e ambiente conectado) continuam pendentes.
