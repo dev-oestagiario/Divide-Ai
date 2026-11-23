@@ -37,12 +37,31 @@ Os blocos seguem dependências e são tarefas futuras; nenhum `[ ]` representa e
 ## F5 — Apenas se houver demanda futura
 - [ ] T050 [P3] Reavaliar modo multiusuário e sincronização; novo ADR, LGPD, autenticação/autorização, modelo remoto, testes RLS e migrações. **Bloqueado por nova autorização e nova especificação.**
 
-## Matriz de rastreio resumida
-- RF01–RF03 → T011, T020, T032.
-- RF04–RF07 → T021, T022, T024.
-- RF08 → T023; RF09 → T024.
-- RF10–RF11 → T030, T031.
-- RF12–RF13 → T012, T013, T032.
-- RF14 → T033 (P2); RF15 → T034 (P2); RNF01–RNF08 → T010–T013, T040–T042.
+## Matriz de rastreabilidade completa
+| Requisito | Tarefas previstas | Evidência de aceite quando implementado |
+|---|---|---|
+| RF01 | T011, T020 | Cadastro, edição, desativação e histórico |
+| RF02 | T011, T020 | Múltiplas rendas em dinheiro/vale e renda extra |
+| RF03 | T020, T032 | Mês e fontes pontuais/recorrentes |
+| RF04 | T021 | CRUD e categoria de despesa |
+| RF05 | T021 | Despesa pessoal sem quota alheia |
+| RF06 | T022 | Proporcional com precisão de centavos |
+| RF07 | T022 | Igualitário/manual com soma exata |
+| RF08 | T023 | Elegibilidade e saldo por titular |
+| RF09 | T024 | Tabela com quotas e saldos separados |
+| RF10 | T030 | Referência 60/15/25 e compromissos previstos |
+| RF11 | T031 | Metas de casa, reserva e carro |
+| RF12 | T012, T013 | Persistência, backup e restauração atômica |
+| RF13 | T032 | Mês fechado preservado |
+| RF14 (P2) | T033 | Pagamentos efetivos diferenciados do previsto |
+| RF15 (P2) | T034 | Impressão/exportação sem dados ocultos |
+| RNF01 | T010, T042 | Ausência de envio financeiro remoto padrão |
+| RNF02 | T010, T012, T013 | Cache offline, persistência e backup |
+| RNF03 | T010, T040 | Viewports 320–1280 px |
+| RNF04 | T010, T040 | Teclado, foco, zoom e rótulos acessíveis |
+| RNF05 | T011, T022, T041 | Cálculos determinísticos em centavos |
+| RNF06 | T010, T042 | Sem login, banco remoto ou serviços pagos |
+| RNF07 | T013, T041 | Importação inválida não destrutiva |
+| RNF08 | T024, T041 | Performance medida em até 200 despesas e 10 participantes |
 
-**Nota:** revisão manual em `analyze.md` (F0) documenta 9 achados. Quando houver ferramenta instalada, reavaliar sequência com `/speckit.analyze` antes de abrir tarefas de implementação. Todos os itens F0 de ratificação permanecem pendentes de aprovação expressa.
+**Atenção:** este rastreio é plano de teste, não evidência de execução. `analyze.md` registra a revisão manual. O comando `/speckit.analyze` exige verificação do ambiente antes da F1.
