@@ -118,10 +118,10 @@ Como operador, quero indicar quando a despesa foi paga e por quem, para diferenc
 ## 9. Fora de escopo
 Login, acesso compartilhado entre dispositivos, banco de dados remoto, pagamentos ou cobranças, projeção inteligente, IA, integração com empregadores/bancos, transferências de vales, apps nativos, telemetria/marketing.
 
-## 10. Dados de exemplo (não são despesas confirmadas)
-- Pessoas: A, dinheiro R$ 2.200, vale R$ 700; B, dinheiro R$ 4.000, vale R$ 900.
-- Aluguel confirmado R$ 2.000, compartilhado; dentista A confirmado R$ 200, individual.
-- Contas R$ 300, transporte eventual A R$ 50, transporte B R$ 400, lazer R$ 300, metas R$ 1.550 e mercado R$ 1.200 são **hipóteses editáveis**, não valores comprovados.
+## 10. Dados fictícios para exemplificar (não representam usuários reais)
+- Pessoas fictícias: A recebe R$ 2.700 em dinheiro e R$ 550 de benefício; B recebe R$ 3.300 em dinheiro e R$ 750 de benefício.
+- Exemplo de aluguel R$ 1.800 (compartilhado); consulta particular de A R$ 150 (individual).
+- Despesas de mercado, transporte, lazer, contas e metas são configuráveis; nenhum exemplo constitui valor confirmado de usuário.
 
 ## 11. Definição de pronto da especificação (antes do código)
 Histórias rastreáveis a RF/RN/RNF, cálculos exemplificados, exceções descritas, requisitos revisados, dúvidas registradas, análise de conformidade inicial e autorização explícita para começar o desenvolvimento. Status atual: **não ratificada**.
