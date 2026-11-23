@@ -3,6 +3,7 @@
 **Decisões confirmadas:** operador único em modo local; editar salários e adicionar fontes de renda sem alterar código; rateio proporcional de contas compartilhadas; dentista e transporte como individuais; uso elegível dos vales para alimentação; 60/15/25 como referência e não gasto compulsório; categorias gerais (aluguel, mercado, contas, lazer, metas); compras de casa como objetivo; tabela com total/quotas/saldos; seguir AGENTS.md e não antecipar implementação.
 
 **Propostas pendentes de ratificação:**
+- **ADR 0002:** cada despesa compartilhada poderá selecionar dois ou mais participantes; ratear apenas entre os selecionados, sem envolver terceiros do mesmo grupo. Proposta em `docs/adr/0002-participantes-e-rateio.md`, ainda não aprovada.
 - Um grupo local com 2+ participantes.
 - Persistência IndexedDB e exportação/importação JSON versionado.
 - Proporção sobre renda monetária mensal, sem misturar benefício.
