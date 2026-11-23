@@ -11,3 +11,10 @@ Conta autorizada: Dev (dev-oestagiario).
 - Branch protection/rulesets não são considerados aplicados até haver evidência de configuração.
 
 Não usar dados financeiros reais em exemplos/commits deste repositório público.
+
+## Verificação de conexão em 2026-11-23
+- Dispositivo `localhost` (Termux) apareceu **Online** no `list_devices` do Desktop Commander.
+- Tentativa de executar comando inicial (inspeção de `uname`, `dev-linux`, `dev-doctor`, Git, Node e Python) **não chegou ao dispositivo**: o serviço respondeu que a cota mensal do Desktop Commander foi atingida e determinou não repetir chamadas nem reconectar.
+- **Nenhum comando foi executado ou validado no Termux/Debian** nesta revisão. Não inferir disponibilidade de Chromium, Playwright, Spec Kit ou ambiente de testes.
+- Preparado `docs/ambiente-termux-preflight.md` para retomada quando o serviço estiver habilitado.
+- Repositório: proteção de `main`/`develop` continua pendente na última verificação; PR #1 ainda em rascunho; F0 sem ratificação expressa.
