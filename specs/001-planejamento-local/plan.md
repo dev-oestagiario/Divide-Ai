@@ -3,10 +3,10 @@
 **Estado:** proposta técnica; nenhum código produzido; implementação bloqueada até ratificação.
 
 ## Arquitetura
-Web local-first sem backend: `domain` (regras puras) → `application` (casos de uso) → `infrastructure` (IndexedDB, backup) → `ui` (telas). Componentes visuais não implementam fórmulas de rateio.
+Web local-first sem backend: `domain` (regras puras) → `application` (casos de uso) → `infrastructure` (IndexedDB, backup, cache offline) → `ui` (telas). Componentes visuais não implementam fórmulas de rateio.
 
 ## Stack proposta
-React + TypeScript + Vite; Tailwind para UI; Zod para validação; IndexedDB para persistência; Vitest, Testing Library e Playwright para testes. Sem Supabase, Auth, IA, integrações bancárias ou serviço remoto no MVP. O CLI Spec Kit e skills devem ser confirmados no ambiente, pois a documentação foi produzida manualmente.
+React + TypeScript + Vite; Tailwind para UI; Zod para validação; IndexedDB para persistência; cache offline via service worker/PWA ou equivalente; Vitest, Testing Library e Playwright para testes. Sem Supabase, Auth, IA, integrações bancárias ou serviço remoto no MVP. O CLI Spec Kit e skills devem ser confirmados no ambiente, pois a documentação foi produzida manualmente.
 
 ## Entidades
 - Household: grupo, política orçamentária, moeda BRL.
@@ -24,15 +24,18 @@ React + TypeScript + Vite; Tailwind para UI; Zod para validação; IndexedDB par
 2. Peso proporcional = renda individual / renda monetária total, somente se total > 0.
 3. Rateio em centavos: calcular quotas racionais, arredondar para baixo, distribuir centavos residuais aos maiores restos (desempate por ID estável). Invariante: soma das quotas = despesa.
 4. Igualitário usa pesos iguais; manual valida soma exata informada.
-5. Benefício: somente despesa elegível do titular, limitado ao seu saldo. Falta de saldo vira quota em dinheiro/pendência com alerta, jamais transferência automática.
-6. Metas planejadas e pagamentos realizados ficam separados, sem dupla dedução.
+5. Benefício: somente despesa elegível do titular, limitado ao saldo; processamento em ordem estável por mês, vencimento e ID ou prioridade ajustada explicitamente; insuficiência vira quota em dinheiro/pendência visível, sem transferência automática.
+6. Metas previstas afetam apenas a disponibilidade planejada; pagamentos/aportes realizados só existirão na etapa RF14/P2, sem dupla dedução.
 7. Em período aberto, recalcular; em fechado, preservar snapshot; reabrir exige ação explícita.
 
 ## Jornadas
 Resumo: mês e tabela única com grupos, descrição, total, coluna por participante, saldos e avisos. Cadastros: participantes, salário e renda extra. Despesas: pessoais/compartilhadas e rateio. Planejamento: tetos 60/15/25 editáveis, metas casa/reserva/carro. Dados: exportar, validar/importar backup. Mobile: manter todas as quotas legíveis.
 
 ## Persistência e recuperação
-IndexedDB versionado, JSON com schemaVersion/exportedAt, prévia e confirmação antes de importar. Importação inválida preserva o estado atual. Informar risco de perda ao limpar navegador e acesso por outras pessoas no mesmo perfil.
+IndexedDB versionado, JSON com schemaVersion/exportedAt, prévia, validação integral e confirmação antes de importar. Aplicar atomicamente ou restaurar estado anterior em falha; importação inválida preserva dados. Informar risco de perda ao limpar navegador e acesso por outras pessoas no mesmo perfil. Cache de aplicação não deve apagar IndexedDB em atualização.
 
 ## Testes, segurança e gates
 Unitários (renda zero, arredondamento, vale, metas, fechamento); integração (IndexedDB/backup); E2E (cadastro, recálculo, recarga, exportação/importação, mobile); lint/typecheck/build quando existir código. Sem dados pessoais reais no repositório público. Avaliar LGPD/LBI conforme uso real, dependências e acessibilidade. **Não iniciar implementação antes da ratificação da F0.**
+
+## Regras adicionais de execução
+Todos os assets essenciais devem ficar no bundle do aplicativo, evitando dependência de CDN externa para funcionamento offline. O cache será testado na reabertura sem conexão, após primeiro acesso. Alertas de erro e logs não podem enviar conteúdos financeiros. As cotas financeiras são valores planejados; gastos efetivos só serão apresentados quando houver registros de pagamento.
