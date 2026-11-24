@@ -1,0 +1,23 @@
+# Glossário de domínio — Dividi
+
+- **Participante:** pessoa cujos rendimentos/despesas estão no orçamento; não implica usuário com login.
+- **Operador:** única pessoa que utiliza a interface para gerenciar os registros na primeira versão.
+- **Renda em dinheiro:** valor líquido disponível para despesas monetárias, incluindo fontes extras elegíveis do período.
+- **Benefício/vale:** saldo restrito a categorias/estabelecimentos elegíveis, de titular definido; não equivale a dinheiro.
+- **Grupo:** conjunto de participantes cujas despesas compartilhadas são rateadas.
+- **Despesa pessoal:** pertence a um participante e não entra no rateio compartilhado.
+- **Despesa compartilhada:** valor cujas quotas são calculadas entre participantes elegíveis.
+- **Quota:** responsabilidade financeira calculada para uma pessoa por despesa.
+- **Pagador:** quem efetuou pagamento; pode diferir do responsável pela quota.
+- **Rateio proporcional:** distribuição conforme renda em dinheiro de cada participante.
+- **Rateio igualitário:** divisão em parcelas iguais, com ajuste determinístico em centavos.
+- **Rateio manual:** quotas atribuídas explicitamente pelo operador.
+- **Previsão:** orçamento/compromisso futuro, não prova que houve pagamento.
+- **Realizado:** pagamento ou aplicação efetivamente lançado.
+- **Envelope:** teto/referência por categoria (necessidades, lazer, objetivos).
+- **Meta:** reserva para objetivo (casa, emergência, carro), não confundir automaticamente com gasto ou ativo financeiro.
+- **Saldo livre:** renda em dinheiro menos compromissos em dinheiro planejados e metas alocadas; diferente de saldo de vale.
+- **Mês aberto:** período cujos valores e proporções podem ser recalculados.
+- **Mês fechado:** período com snapshot preservado para consulta; reabertura é explícita.
+- **Snapshot:** retrato dos dados e quotas usados para fechar um período.
+- **Backup:** exportação versionada feita pelo operador; não é sincronização automática.
