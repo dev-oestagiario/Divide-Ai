@@ -65,3 +65,16 @@ Os blocos seguem dependências e são tarefas futuras; nenhum `[ ]` representa e
 | RNF08 | T024, T041 | Performance medida em até 200 despesas e 10 participantes |
 
 **Atenção:** este rastreio é plano de teste, não evidência de execução. `analyze.md` registra a revisão manual. O comando `/speckit.analyze` exige verificação do ambiente antes da F1.
+
+## Backlog GitHub da F1 — preparado, não autorizado
+
+As issues abaixo **não representam tarefas concluídas**; a implementação depende da ratificação F0 (#2), rulesets ativos e autorização de início da F1.
+
+| Tarefa | Issue | Objetivo | Estado |
+|---|---|---|---|
+| T010 | [#3](https://github.com/dev-oestagiario/Divide-Ai/issues/3) | Fundação e operação offline | Bloqueada |
+| T011 | [#4](https://github.com/dev-oestagiario/Divide-Ai/issues/4) | Domínio em centavos | Bloqueada |
+| T012 | [#5](https://github.com/dev-oestagiario/Divide-Ai/issues/5) | IndexedDB | Bloqueada |
+| T013 | [#6](https://github.com/dev-oestagiario/Divide-Ai/issues/6) | Backup atômico | Bloqueada |
+
+**Ordem de dependências:** T010 → T011 → T012 → T013. Nenhum commit de implementação ou teste de aplicação foi realizado nesta etapa.
